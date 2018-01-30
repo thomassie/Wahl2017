@@ -55,7 +55,12 @@ server <- function(input, output) {
   
   # Laden der pdf-Dateie.
   ifelse(input$selected.party = "CDU/CSU",
-         text_raw <- pdf_text("AFD.pdf"))
+         download.file("https://github.com/thomassie/Wahl2017/raw/master/Data/CDUCSU.pdf",
+                       "text.pdf", 
+                       mode = "wb"))
+         
+         
+         text_raw <- pdf_text("https://github.com/thomassie/Wahl2017/raw/master/Data/CDUCSU.pdf"))
   
   
   
